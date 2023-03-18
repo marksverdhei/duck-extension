@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Rainbow Duck",
+    "version": "1.0",
+    "description": "Animate every occurrence of the word 'duck' with a wavy, rainbow animation.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"],
+        "css": ["styles.css"]
+      }
+    ]
+  }
+  

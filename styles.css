@@ -1,0 +1,23 @@
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+    }
+    
+    .rainbow-duck {
+    display: inline;
+    animation: rainbow 3s linear infinite;
+    font-style: italic;
+    text-decoration: underline;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-repeat: repeat-x;
+    background-size: 100% 0.15em;
+    background-position: 0% 100%;
+    -webkit-background-clip: text;
+    color: transparent;
+    }  
