@@ -7,17 +7,23 @@
     71% { color: indigo; }
     85% { color: violet; }
     100% { color: red; }
-    }
-    
-    .rainbow-duck {
+  }
+  
+  @keyframes wave {
+    0%, 100% { transform: translateY(calc(var(--amplitude) * 0)); }
+    25% { transform: translateY(calc(var(--amplitude) * -1)); }
+    50% { transform: translateY(calc(var(--amplitude) * 0)); }
+    75% { transform: translateY(calc(var(--amplitude) * 1)); }
+  }
+  
+  .rainbow-duck {
     display: inline;
-    animation: rainbow 3s linear infinite;
     font-style: italic;
     text-decoration: underline;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    background-repeat: repeat-x;
-    background-size: 100% 0.15em;
-    background-position: 0% 100%;
-    -webkit-background-clip: text;
-    color: transparent;
-    }  
+    animation: rainbow 3s linear infinite, wave 0.8s ease-in-out infinite;
+  }
+  
+  .rainbow-duck-container {
+    display: inline;
+  }
+  

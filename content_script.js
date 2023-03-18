@@ -1,12 +1,21 @@
 function animateWord(word) {
-  const span = document.createElement('span');
-  span.className = 'rainbow-duck';
-  span.textContent = word;
-  return span;
+  const container = document.createElement('span');
+  container.className = 'rainbow-duck-container';
+
+  for (let i = 0; i < word.length; i++) {
+    const charSpan = document.createElement('span');
+    charSpan.className = 'rainbow-duck';
+    charSpan.style.setProperty('--amplitude', `${Math.sin(i) * 5}px`);
+    charSpan.style.animationDelay = `${i * 0.1}s`;
+    charSpan.textContent = word[i];
+    container.appendChild(charSpan);
+  }
+
+  return container;
 }
 
 function replaceText(node) {
-  const wordRegex = /duck/gi;
+  const wordRegex = /(?:duck|duckling|fuck|fucking)/gi;
   const parent = node.parentNode;
   const textContent = node.textContent;
   let lastIndex = 0;
@@ -18,7 +27,8 @@ function replaceText(node) {
     let match;
     while ((match = wordRegex.exec(textContent)) !== null) {
       const textNode = document.createTextNode(textContent.slice(lastIndex, match.index));
-      const animatedWord = animateWord(match[0]);
+      const replacementWord = match[0].toLowerCase() === 'fuck' ? 'duck' : match[0].toLowerCase() === 'fucking' ? 'duckling' : match[0];
+      const animatedWord = animateWord(replacementWord);
       fragment.appendChild(textNode);
       fragment.appendChild(animatedWord);
       lastIndex = match.index + match[0].length;
@@ -32,6 +42,7 @@ function replaceText(node) {
     parent.replaceChild(fragment, node);
   }
 }
+
 
 function walk(node) {
   let child, next;
