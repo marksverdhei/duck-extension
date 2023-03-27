@@ -2,11 +2,14 @@
 
 Rainbow Duck is a Chrome Extension that animates every occurrence of the word "duck" with a wavy, rainbow animation. Additionally, it replaces occurrences of "fuck" and "fucking" with "duck" and "duckling," respectively, and applies the same animation.
 
+![](favicon.png)
+
 ## Features
 
 - Animate the word "duck" with a wavy, rainbow animation
 - Replace occurrences of "fuck" and "fucking" with "duck" and "duckling," and animate them
 - Makes reading content more fun and family-friendly
+
 
 ## Installation
 

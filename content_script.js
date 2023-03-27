@@ -15,7 +15,7 @@ function animateWord(word) {
 }
 
 function replaceText(node) {
-  const wordRegex = /(?:duck|duckling|fuck|fucking)/gi;
+  const wordRegex = /(?:fucking|fuck|duckling|duck)/gi;
   const parent = node.parentNode;
   const textContent = node.textContent;
   let lastIndex = 0;
